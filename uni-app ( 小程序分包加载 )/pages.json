@@ -1,0 +1,113 @@
+{
+	// 主包
+	"pages": [
+		{
+				"path": "pages/tabbar/index/index",
+				"style": {
+					"navigationBarTitleText": "鼎盛数据平台"
+				}
+			},
+			{
+				"path": "pages/tabbar/user/index",
+				"style": {
+					"navigationBarTitleText": "个人中心"
+				}
+			},
+			{
+				"path": "pages/tabbar/release/index",
+				"style": {
+					"navigationBarTitleText": "发布任务"
+				}
+			},
+			{
+				"path": "pages/tabbar/task/index",
+				"style": {
+					"navigationBarTitleText": "任务大厅"
+				}
+			}
+	],
+	
+	// 分包加载 -> 配置
+	"subPackages": [{
+			"root": "pages_release",
+			"pages": [{
+				"path": "index",
+				"style": {
+					"navigationBarTitleText": "发布任务"
+				}
+			}]
+		},
+		{
+			"root": "pages_user",
+			"pages": [{
+				"path": "index",
+				"style": {
+					"navigationBarTitleText": "个人中心"
+				}
+			}]
+		},
+		{
+			"root": "pages_task",
+			"pages": [{
+				"path": "index",
+				"style": {
+					"navigationBarTitleText": "任务大厅"
+				}
+			}]
+		}
+	],
+	
+	// 分包加载 -> 配置
+	"preloadRule": {
+		"pages_release/index": {
+			"network": "all",
+			"packages": ["pages_release"]
+		},
+		"pages_user/index": {
+			"network": "all",
+			"packages": ["pages_user"]
+		},
+		"pages_task/index": {
+			"network": "all",
+			"packages": ["pages_task"]
+		}
+	},
+
+	// 设置状态栏、导航栏、标题、窗口颜色等等
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarBackgroundColor": "#FFC738",
+		"backgroundColor": "#F8F8F8"
+	},
+	
+	// tabBar 设置
+	"tabBar": {
+		"color": "#000",
+		"selectedColor": "#000",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/tabbar/index/index",
+				"iconPath": "static/tabbar/symr.png",
+				"selectedIconPath": "static/tabbar/syxz.png",
+				"text": "首页"
+			}, {
+				"pagePath": "pages/tabbar/task/index",
+				"iconPath": "static/tabbar/rwmr.png",
+				"selectedIconPath": "static/tabbar/rwxz.png",
+				"text": "任务大厅"
+			},
+			{
+				"pagePath": "pages/tabbar/release/index",
+				"iconPath": "static/tabbar/fabumr.png",
+				"selectedIconPath": "static/tabbar/fabuxuanz.png",
+				"text": "发布"
+			}, {
+				"pagePath": "pages/tabbar/user/index",
+				"iconPath": "static/tabbar/wodemr.png",
+				"selectedIconPath": "static/tabbar/wodexuanz.png",
+				"text": "我的"
+			}
+		]
+	}
+}
